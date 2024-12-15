@@ -15,13 +15,13 @@ class Presto():
     NUM_LEDS = 7
     LED_PIN = 33
 
-    def __init__(self, full_res=False, ambient_light=False, direct_to_fb=False, layers=None):
+    def __init__(self, full_res=False, ambient_light=False, direct_to_fb=False, layers=None, touch_enable_interrupt=False):
         # WiFi - *must* happen before Presto bringup
         # Note: Forces WiFi details to be in secrets.py
         self.wifi = EzWiFi()
 
         # Touch Input
-        self.touch = FT6236(full_res=full_res)
+        self.touch = FT6236(full_res=full_res, enable_interrupt=touch_enable_interrupt)
 
         # Display Driver & PicoGraphics
         if layers is None:
