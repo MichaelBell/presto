@@ -12,6 +12,9 @@ MP_DEFINE_CONST_FUN_OBJ_2(Presto_auto_ambient_leds_obj, Presto_auto_ambient_leds
 MP_DEFINE_CONST_FUN_OBJ_KW(Presto_set_led_rgb_obj, 5, Presto_set_led_rgb);
 MP_DEFINE_CONST_FUN_OBJ_KW(Presto_set_led_hsv_obj, 3, Presto_set_led_hsv);
 
+MP_DEFINE_CONST_FUN_OBJ_2(Presto_profile_obj, Presto_profile);
+MP_DEFINE_CONST_FUN_OBJ_1(Presto_dump_profile_obj, Presto_dump_profile);
+
 /***** Binding of Methods *****/
 
 static const mp_rom_map_elem_t Presto_locals_dict_table[] = {
@@ -22,6 +25,8 @@ static const mp_rom_map_elem_t Presto_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_auto_ambient_leds), MP_ROM_PTR(&Presto_auto_ambient_leds_obj) },
     { MP_ROM_QSTR(MP_QSTR_set_led_rgb), MP_ROM_PTR(&Presto_set_led_rgb_obj) },
     { MP_ROM_QSTR(MP_QSTR_set_led_hsv), MP_ROM_PTR(&Presto_set_led_hsv_obj) },
+    { MP_ROM_QSTR(MP_QSTR_profile), MP_ROM_PTR(&Presto_profile_obj) },
+    { MP_ROM_QSTR(MP_QSTR_dump_profile), MP_ROM_PTR(&Presto_dump_profile_obj) },
 
     { MP_ROM_QSTR(MP_QSTR_WIDTH), MP_ROM_INT(WIDTH/2) },
     { MP_ROM_QSTR(MP_QSTR_HEIGHT), MP_ROM_INT(HEIGHT/2) },

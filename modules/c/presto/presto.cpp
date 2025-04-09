@@ -5,6 +5,7 @@
 #include <cstdio>
 #include <cfloat>
 
+#include "profile.hpp"
 
 #include "hardware/structs/ioqspi.h"
 #include "hardware/structs/qmi.h"
@@ -404,6 +405,21 @@ mp_obj_t Presto_set_led_hsv(size_t n_args, const mp_obj_t *pos_args, mp_map_t *k
       case 5: self->led_values[index] = {(uint8_t)v, (uint8_t)p, (uint8_t)q}; break;
     }
 
+    return mp_const_none;
+}
+
+mp_obj_t Presto_profile(mp_obj_t self_in, mp_obj_t enable) {
+    if (mp_obj_is_true(enable)) {
+        start_profiler();
+    } else {
+        stop_profiler();
+    }
+
+    return mp_const_none;
+}
+
+mp_obj_t Presto_dump_profile(mp_obj_t self_in) {
+    profiler_print_stats();
     return mp_const_none;
 }
 

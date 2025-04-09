@@ -5,6 +5,7 @@ get_filename_component(REPO_ROOT "${CMAKE_CURRENT_LIST_DIR}../../../../" ABSOLUT
 target_sources(usermod_presto INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/presto.c
     ${CMAKE_CURRENT_LIST_DIR}/presto.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/profile.cpp
     ${REPO_ROOT}/drivers/st7701/st7701.cpp
 )
 pico_generate_pio_header(usermod_presto ${REPO_ROOT}/drivers/st7701/st7701_parallel.pio)
